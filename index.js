@@ -60,5 +60,6 @@ var Player = {
 
 var player1 = Object.create(Player);
 player1.init("Sylions", 250, 150);
+player1.Stamina = 20;
 
 console.log(player1.displayState());
