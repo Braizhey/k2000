@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html ng-app="k2000App">
 	<head>
 		<title>A Life Journey</title>
 
@@ -6,47 +7,13 @@
 		<meta charset="UTF-8" />
 
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 		<script src="assets/js/angular.min.js"></script>
-		<script src="indexController.js"></script>
-		<style>
-			input.ng-invalid {
-				border: dotted 1px red;
-			}
-			.error {
-				color : red;
-			}
-		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+		<script src="app/app.routes.js"></script>
 	</head>
 	<body>
-		<div data-ng-app="k2000App" data-ng-controller="indexCtrl">
-			<p>First name: <input type="text" data-ng-model="firstName" /></p>
-			<p>Last name: <input type="text" data-ng-model="lastName" /></p>
-			<p ng-click="changeNames()">[Switch names]</p>
-			<h1>Hello {{fullName() | uppercase}}, time is running out... {{now | date: 'HH:mm:ss:sss'}}</h1>
-			
-			<p>
-				<span>Search category: </span><input type="text" ng-model="searchCategory" />
-			</p>
-
-			<nav>
-				<ul>
-					<li ng-repeat="cat in categories | orderBy: 'Name' | filter: searchCategory">
-						<a href="#">{{cat.Name}}</a>
-					</li>
-				</ul>
-			</nav>
-			<form name="testForm">
-				<h2>Form status</h2>
-				<p>
-					Valid: {{testForm.userEmail.$valid}} <br/>
-					Modified: {{testForm.userEmail.$dirty}}<br/>
-					Entered: {{testForm.userEmail.$touched}}
-				</p>
-				Email: <input type="email" name="userEmail" ng-model="text" />
-				<span ng-show="testForm.userEmail.$error.email" class="error">Not a valid e-mail address</span>
-			</form>
-			<h2>Application Details</h2>
-			{{appUrl}}
-		</div>
+		<ng-view></ng-view>
 	</body>
 </html>
