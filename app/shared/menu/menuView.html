@@ -1,0 +1,13 @@
+<header class="body-header">
+	<div class="body-header-title">
+		<h1><a href="home" ng-click="indexCtrl.reloadData()">K-2000</a></h1>
+		<h2><a href="home">A Life Journey</a></h2>
+	</div>
+		<nav class="body-header-navLinks">
+			<ul>
+				<li ng-repeat="category in menuCtrl.Categories">
+					<a href="category/{{category.Id}}">{{category.Name}}</a>
+				</li>
+			</ul>
+		</nav>
+</header>

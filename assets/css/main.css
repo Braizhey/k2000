@@ -92,6 +92,10 @@
 		.body-header-navLinks a:hover {
 			color: #992F59;
 		}
+		.body-header-title h1 a, h2 a {
+			text-decoration: none;
+			color: #156FB0;
+		}
 		@media all and (max-device-width: 1024px)
 		{
 			.body-header h1 {
